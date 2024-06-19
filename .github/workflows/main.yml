@@ -1,29 +1,11 @@
-name: CI Workflow
+name: Hello World Workflow
 
-on:
-  push:
-    branches:
-      - main  # Trigger workflow on push to main branch
-      - master  # Add additional branches as needed
-  pull_request:
-    branches:
-      - main  # Trigger workflow on pull requests to main branch
+on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Choose your operating system
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2  # Action to checkout the repository
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2  # Action to set up Node.js (replace with your language/environment setup)
-
-      - name: Install dependencies
-        run: npm install  # Modify for your package manager (npm, pip, etc.)
-
-      - name: Run tests
-        run: npm test  # Replace with your test command
-
-      # Add more steps as needed, such as build, linting, etc.
+    - name: Say Hello
+      run: echo "Hello, World!"
